@@ -1,6 +1,6 @@
 const express = require('express');
 const dbCall = require('./dbQuery');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.json());
 app.get('/api/directors', (req, res) => {
@@ -11,13 +11,18 @@ app.get('/api/directors', (req, res) => {
 })
 
 app.get('/api/directors/:id', (req, res) => {
-    dbCall.getAllData(`SELECT * FROM director WHERE director_id = ${req.params.id}`)
-    .then( director => {
-        res.status(200).json(director);
-    })
+    if(Number.isInteger(req.params.id)) {
+        dbCall.getAllData(`SELECT * FROM director WHERE director_id = ${req.params.id}`)
+        .then( director => {
+            res.status(200).json(director);
+        })
+    } else {
+        res.send("Please Give Diretor id as an integer value");
+    }
 })
 
 app.post('/api/directors', (req, res) => {
+
     dbCall.addNewEntry(`INSERT INTO director(director_name) VALUES('${req.body.director_name}')`)
     .then( () => {
         res.status(200).send("added Doctors into doctor table");
