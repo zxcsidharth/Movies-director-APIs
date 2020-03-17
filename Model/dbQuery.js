@@ -117,10 +117,29 @@ async function updateEntry(query) {
         })
     })
 }
+async function checkidInDirector(query) {
+  const result = await pool
+  .connect()
+  .then(client => {
+    return client
+      .query(query)
+      .then(res => {
+        client.release();
+        if(res.rowCount > 0) return true;
+        return false;
+      })
+      .catch(err => {
+        client.release()
+        console.log(err.stack)
+      })
+  })
+  return result;
+}
 module.exports = {
     getAllData,
     addNewEntry,
-    updateEntry
+    updateEntry,
+    checkidInDirector
 }
 
 
