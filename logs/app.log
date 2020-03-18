@@ -1,0 +1,2 @@
+{"message":"::1 - - [18/Mar/2020:10:58:19 +0000] \"GET /api/directors HTTP/1.1\" 404 152 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [18/Mar/2020:10:58:26 +0000] \"GET /api/director HTTP/1.1\" 200 1875 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36\"\n","level":"info"}
