@@ -10,6 +10,7 @@ app.get('/api/directors', (req, res) => {
     })
 })
 
+
 app.get('/api/directors/:id', (req, res) => {
     dbCall.getAllData(`SELECT * FROM director WHERE director_id = ${req.params.id}`)
     .then( director => {
