@@ -15,14 +15,14 @@ const pool = new Pool({
 //     return client
 //       .query(`create table director(director_id serial primary key, director_name varchar(35))`)
 //       .then(() => {
-//         let id = 1;
-//         const result = data.reduce((emptyObj, arrayObj) => {
-//             if(!emptyObj[arrayObj.Director]) {
-//                 emptyObj[arrayObj.Director] = id++;
-//                 client.query(`INSERT INTO director (director_name) VALUES('${arrayObj.Director}')`)
-//             }
-//             return emptyObj;
-//         }, {})
+        // let id = 1;
+        // const result = data.reduce((emptyObj, arrayObj) => {
+        //     if(!emptyObj[arrayObj.Director]) {
+        //         emptyObj[arrayObj.Director] = id++;
+        //         client.query(`INSERT INTO director (director_name) VALUES('${arrayObj.Director}')`)
+        //     }
+        //     return emptyObj;
+        // }, {})
 //         client.release()
 //         return result;
 //       })
@@ -41,13 +41,13 @@ const pool = new Pool({
 //              runtime integer, genre varchar(30), rating numeric, metascore varchar(10), votes integer, gross_earning varchar(15), 
 //              actor varchar(50), year integer, director_id integer)`)
 //       .then(() => {
-//         data.forEach((arrayObj) => {
-//             let value = Object.values(arrayObj);
-//             value.splice(9, 1);
-//             value.push(dirObj[arrayObj.Director]);
-//             console.log(value);
-//             client.query('INSERT INTO movies VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)',value)
-//         })
+        // data.forEach((arrayObj) => {
+        //     let value = Object.values(arrayObj);
+        //     value.splice(9, 1);
+        //     value.push(dirObj[arrayObj.Director]);
+        //     console.log(value);
+        //     client.query('INSERT INTO movies VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)',value)
+        // })
 //         client.release();
 //       })
 //       .catch(err => {

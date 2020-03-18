@@ -1,20 +1,22 @@
 const express = require('express');
-const dbCall = require('../Model/dbQuery');
+const dbCall = require('../Model/directorDB');
 const validate = require('../Model/validation');
 const route = express.Router();
 route.get('/', (req, res) => {   //checked
-    dbCall.getAllData('select * from director')
+    dbCall.getAllData()
     .then( dbData => {
         res.status(200).json(dbData);
     })
+    .catch(err => console.log(err.message));
 })
 
 route.get('/:id', (req, res) => {   //checked
     if(validate.validateID(req.params)) {
-        dbCall.getAllData(`SELECT * FROM director WHERE director_id = ${req.params.id}`)
+        dbCall.getDataForId(req.params.id)
         .then( director => {
             res.status(200).json(director);
         })
+        .catch(err => console.log(err.message));
     } else {
         res.status(422).json({
             status: 'error',
@@ -25,7 +27,7 @@ route.get('/:id', (req, res) => {   //checked
 
 route.post('/', (req, res) => {
     if(validate.validateDirName(req.body)) {    //checked
-        dbCall.addNewEntry(`INSERT INTO director(director_name) VALUES('${req.body.name}')`)
+        dbCall.addNewEntry(req.body.name)
         .then( () => {
             res.status(200).send("added Doctors into doctor table");
         })
@@ -41,7 +43,7 @@ route.post('/', (req, res) => {
 
 route.put('/:id', (req, res) => {       //checked
     if(validate.validateID(req.params) && validate.validateDirName(req.body)) {
-        dbCall.updateEntry(`UPDATE director SET director_name = '${req.body.name}' where director_id = ${req.params.id}`)
+        dbCall.updateEntry(req.body.name, req.params.id)
         .then( () => {
             res.status(200).send("updated entry for given id");
         })
@@ -57,7 +59,7 @@ route.put('/:id', (req, res) => {       //checked
 
 route.delete('/:id', (req, res) => {    //checked
     if(validate.validateID(req.params)) {
-        dbCall.updateEntry(`delete from director where director_id = ${req.params.id}`)
+        dbCall.deleteEntry(req.params.id)
         .then( () => {
             res.status(200).send("deleted entry from director for given ID");
         })

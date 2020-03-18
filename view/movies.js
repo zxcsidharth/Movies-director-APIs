@@ -25,7 +25,7 @@ route.get('/:id', (req, res) => {      //checked
 
 route.post('/', (req, res) => {  //checked
     if(validate.validateUpdateMovies(req.body)) {
-        dbCall.checkidInDirector(`SELECT director_id FROM director where director_id = ${req.body.director_id}`)
+        dbCall.checkidInDirector(req.body.director_id)
         .then(boolValue => {
             if(boolValue) {
                 const value = Object.values(req.body);
@@ -88,7 +88,7 @@ route.put('/:columnName/:rank', (req, res) => {
 })
 route.delete('/:id', (req, res) => {   // checked
     if(validate.validateID(req.params)) {
-        dbCall.updateEntry(`delete from movies where rank = ${req.params.id}`)
+        dbCall.deleteEntry(req.params.id)
         .then(() => {
             res.status(200).send("deleted entry from movies for given ID");
         })
