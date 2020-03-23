@@ -2,3 +2,21 @@
 {"message":"::1 - - [18/Mar/2020:10:58:26 +0000] \"GET /api/director HTTP/1.1\" 200 1875 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36\"\n","level":"info"}
 {"message":"::1 - - [18/Mar/2020:11:11:11 +0000] \"GET /api/directors HTTP/1.1\" 404 152 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36\"\n","level":"info"}
 {"message":"::1 - - [18/Mar/2020:11:11:19 +0000] \"GET /api/director/67 HTTP/1.1\" 200 2 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Mar/2020:16:27:49 +0000] \"GET /api/directors HTTP/1.1\" 404 152 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Mar/2020:16:27:55 +0000] \"GET /api/movies HTTP/1.1\" 200 18344 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Mar/2020:16:28:05 +0000] \"GET /api/movies/4736 HTTP/1.1\" 422 51 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Mar/2020:16:28:13 +0000] \"GET /api/movies/94 HTTP/1.1\" 200 2 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Mar/2020:16:28:21 +0000] \"GET /api/movies/45 HTTP/1.1\" 200 310 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Mar/2020:16:29:09 +0000] \"GET /api/movies/45 HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Mar/2020:16:29:13 +0000] \"GET /api/movies/4 HTTP/1.1\" 200 372 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Mar/2020:16:30:33 +0000] \"GET /api/movies/46 HTTP/1.1\" 500 3097 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Mar/2020:16:31:17 +0000] \"GET /api/movies/46 HTTP/1.1\" 200 333 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Mar/2020:16:31:33 +0000] \"GET /api/movies/ HTTP/1.1\" 200 18819 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Mar/2020:16:50:42 +0000] \"GET /api/movies/32 HTTP/1.1\" 200 380 \"-\" \"PostmanRuntime/7.23.0\"\n","level":"info"}
+{"message":"::1 - - [19/Mar/2020:16:53:11 +0000] \"POST /api/director/ HTTP/1.1\" 500 3135 \"-\" \"PostmanRuntime/7.23.0\"\n","level":"info"}
+{"message":"::1 - - [19/Mar/2020:16:54:39 +0000] \"POST /api/director/ HTTP/1.1\" 200 31 \"-\" \"PostmanRuntime/7.23.0\"\n","level":"info"}
+{"message":"::1 - - [19/Mar/2020:16:55:32 +0000] \"DELETE /api/director/37 HTTP/1.1\" 500 3109 \"-\" \"PostmanRuntime/7.23.0\"\n","level":"info"}
+{"message":"::1 - - [19/Mar/2020:16:57:31 +0000] \"DELETE /api/director/37 HTTP/1.1\" 200 40 \"-\" \"PostmanRuntime/7.23.0\"\n","level":"info"}
+{"message":"::1 - - [19/Mar/2020:18:14:50 +0000] \"DELETE /api/director/37 HTTP/1.1\" 200 40 \"-\" \"PostmanRuntime/7.23.0\"\n","level":"info"}
+{"message":"::1 - - [19/Mar/2020:18:16:29 +0000] \"DELETE /api/director/37 HTTP/1.1\" 200 40 \"-\" \"PostmanRuntime/7.23.0\"\n","level":"info"}
+{"message":"::1 - - [19/Mar/2020:18:23:01 +0000] \"DELETE /api/director/37 HTTP/1.1\" 200 53 \"-\" \"PostmanRuntime/7.23.0\"\n","level":"info"}

@@ -16,8 +16,6 @@ const Director = db.define('director', {
     }
 )
 
-
-
 const Movies = db.define('movies', {
     rank: {type:Sequelize.INTEGER, primaryKey: true},
     title: {type: Sequelize.STRING, },

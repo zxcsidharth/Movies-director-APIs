@@ -28,7 +28,7 @@ route.get('/:id', (req, res) => {   //checked
 route.post('/', (req, res) => {
     if(validate.validateDirName(req.body)) {    //checked
         dbCall.addNewEntry(req.body.name)
-        .then( () => {
+        .then(() => {
             res.status(200).send("added Doctors into doctor table");
         })
         .catch(err => console.log(err.message));
@@ -43,8 +43,13 @@ route.post('/', (req, res) => {
 
 route.put('/:id', (req, res) => {       //checked
     if(validate.validateID(req.params) && validate.validateDirName(req.body)) {
-        dbCall.updateEntry(req.body.name, req.params.id)
-        .then( () => {
+        dbCall.checkDirectorDetail(req.params.id, req.body.name)
+        .then(result => {
+            if(result) {
+                return dbCall.updateEntry(req.body.name, req.params.id)
+            }
+        })
+        .then(() => {
             res.status(200).send("updated entry for given id");
         })
         .catch(error => console.log(error.message));
@@ -59,8 +64,19 @@ route.put('/:id', (req, res) => {       //checked
 
 route.delete('/:id', (req, res) => {    //checked
     if(validate.validateID(req.params)) {
-        dbCall.deleteEntry(req.params.id)
-        .then( () => {
+        dbCall.getDataForId(req.params.id)
+        .then((result) => {
+            if(result.length > 0) {
+                return dbCall.deleteEntry(req.params.id)
+            }
+            else {
+                res.status(422).json({
+                    status: 'error',
+                    message: `director Does'nt exist`
+                });
+            }
+        }) 
+        .then(() => {
             res.status(200).send("deleted entry from director for given ID");
         })
         .catch(error => console.log(error.message));
