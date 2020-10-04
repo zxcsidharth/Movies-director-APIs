@@ -35,7 +35,7 @@ function addNewEntry(name) {
 function checkDirectorDetail(id, name) {
     return getDataForId(id).then(result => {
         if(result.length > 0) {
-            return checkDoctorname(name).then((resArray) => {
+            return checkDirectorName(name).then((resArray) => {
                 if(resArray.length > 0) return true;
                 return false;
             }).catch(() => false) 
@@ -48,7 +48,7 @@ function checkDirectorDetail(id, name) {
     })
 }
 
-function checkDoctorname(name) {
+function checkDirectorName(name) {
     return model.Director.findAll({ where: { director_name: name }, raw: true }).then( result => {
         return result
     })
@@ -64,5 +64,6 @@ module.exports = {
     addNewEntry,
     updateEntry,
     deleteEntry,
-    checkDirectorDetail
+    checkDirectorDetail,
+    checkDirectorName
 }

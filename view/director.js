@@ -27,7 +27,18 @@ route.get('/:id', (req, res) => {   //checked
 
 route.post('/', (req, res) => {
     if(validate.validateDirName(req.body)) {    //checked
-        dbCall.addNewEntry(req.body.name)
+        dbCall.checkDirectorName(req.body.name)
+        .then( resultRow => {
+            if(resultRow.length > 0) {
+                return dbCall.addNewEntry(req.body.name)
+            } else {
+                res.status(422).json({
+                    status: 'error',
+                    message: 'director name already exist',
+                    data: req.body
+                });
+            }
+        })
         .then(() => {
             res.status(200).send("added Doctors into doctor table");
         })

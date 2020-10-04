@@ -18,4 +18,6 @@ app.use(morgan('combined', { stream: winston.stream }));
 app.use('/api/director', require('./view/director'));
 app.use('/api/movies', require('./view/movies'));
 
+
+
 app.listen(8000);
